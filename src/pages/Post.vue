@@ -5,14 +5,13 @@
       <v-breadcrumbs-item link to="/post">Post</v-breadcrumbs-item>
     </v-breadcrumbs>
 
+    <h1 class="text-h2 font-weight-bold text-uppercase">
+      {{ post.title }}
+    </h1>
+    <p>{{ post.body }}</p>
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col cols="12" sm="10" md="8">
-          <h1 class="text-h2 font-weight-bold mb-4 text-uppercase">
-            {{ post.title }}
-          </h1>
-          <p>{{ post.body }}</p>
-
           <h2 class="text-h3 mt-10">Comments</h2>
           <v-list :avatar="true" :three-line="true">
             <v-list-item v-for="comment in comments" :key="comment.id">

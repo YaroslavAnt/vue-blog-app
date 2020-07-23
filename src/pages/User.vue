@@ -4,11 +4,12 @@
       <v-breadcrumbs-item link to="/">Home</v-breadcrumbs-item>
       <v-breadcrumbs-item link to="/user">User</v-breadcrumbs-item>
     </v-breadcrumbs>
-    <v-container class="fill-height" fluid>
+
+    <h1 class="text-h2 font-weight-bold  text-uppercase">{{ user.name }}</h1>
+
+    <v-container fluid>
       <v-row align="center" justify="center">
         <v-col cols="12" sm="10" md="8">
-          <h1 class="text-h2 font-weight-bold">{{ user.name }}</h1>
-
           <v-list>
             <v-list-item>
               <v-icon class="indigo--text">mdi-mail</v-icon>
