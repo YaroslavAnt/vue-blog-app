@@ -11,6 +11,10 @@ class ApiService {
     const result = await this.axiosInstance.get("/posts");
     return result;
   }
+  async getFilteredPosts(query) {
+    const result = await this.axiosInstance.get(`/posts?q=${query}`);
+    return result;
+  }
 
   async getPost(postId) {
     const result = await this.axiosInstance.get(`/posts/${postId}`);
@@ -26,29 +30,14 @@ class ApiService {
     const result = await this.axiosInstance.get(`/users`);
     return result;
   }
+
   async getUser(userId) {
     const result = await this.axiosInstance.get(`/users/${userId}`);
     return result;
-  }
-
-  async getPostjkhkjhkjhkj(token, page = 1, type = "") {
-    const result = await this.axiosInstance.get("/", {
-      params: {
-        s: "Batman",
-        page,
-        type,
-        apikey: token,
-      },
-    });
-
-    return {
-      result: result.data.Search,
-      numberOfResult: result.data.totalResults,
-    };
   }
 }
 
 const apiService = new ApiService();
 
-// export default { apiService };
+export default { apiService };
 export { apiService };
